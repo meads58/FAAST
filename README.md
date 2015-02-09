@@ -22,6 +22,7 @@ Enter coach			 |Coach
 Exit coach			 |Coach
 Enter station		 |Station						 
 Leave station		 |Station
+Knows the station they are in |station
 								 								 
 Coach
 -----

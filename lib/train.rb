@@ -1,6 +1,9 @@
 class Train
 
+	attr_accessor :location
+
 	def initialize
+		@location
 		stop
 	end
 
@@ -15,5 +18,6 @@ class Train
 	def stop
 		@status = :Stopped
 	end
+
 
 end

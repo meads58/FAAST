@@ -4,6 +4,7 @@ describe Train do
 	STOPPED = :Stopped
 	MOVING = :Moving
 	let(:train) { Train.new }
+	let(:aldgate) {double :station, name: :doneskie}
 
 	it "is created with a stopped status" do
 		expect(train.status).to eq STOPPED
@@ -18,6 +19,11 @@ describe Train do
 		train.move
 		train.stop
 		expect(train.status).to eq STOPPED
+	end
+
+	it 'should know which station it is in' do
+		train.location = aldgate.name
+		expect(train.location).to eq :doneskie
 	end
 
 end

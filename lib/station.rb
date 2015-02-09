@@ -1,17 +1,19 @@
 class Station
 
-	attr_reader :signal
+	attr_reader :signal, :name
 
-	def initialize
+	def initialize(name)
 		@train_holder = []
+		@name = name
 	end
 
 	def train_holder
 		@train_holder  
 	end
 
-	def enter_station
+	def enter_station(train)
 		@signal = :Enter
+		train.location(name)
 	end
 
 	def leave_station

@@ -2,7 +2,7 @@ require 'station'
 
 describe Station do 
 
-let(:station) {Station.new}
+let(:station) {Station.new(:aldgate)}
 let(:train) {double :train}
 
 	it 'sends signal to enter station' do
@@ -30,13 +30,14 @@ let(:train) {double :train}
 	end
 end
 
-
 def enter_station
-	station.enter_station
+	expect(train).to receive(:location)
+	station.enter_station(train)
 end
 
 def dock_train(train)
-	station.enter_station
+	expect(train).to receive(:location)
+	station.enter_station(train)
 	station.dock(train)
 end
 
